@@ -33,9 +33,9 @@ Run `npx expo start --lan` and the app should open instantly.
 
 ## Get started
 
-1. Install dependencies
 
    ```bash
+   npm install
    npm install
    ```
 

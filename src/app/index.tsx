@@ -26,7 +26,7 @@ function getDevMenuHint() {
 export default function HomeScreen() {
   return (
       <SafeAreaView className="flex-1 items-center justify-center bg-white">
-        <Text className="text-xl font-bold text-cyan-400">Ride Nest!</Text>
+        <Text className="text-xl font-bold text-cyan-400">Ride hi Nest!</Text>
       </SafeAreaView>
   );
 }
