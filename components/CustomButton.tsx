@@ -1,4 +1,5 @@
-import {TouchableOpacity,Text} from "react-native";
+import { Text, TouchableOpacity } from "react-native";
+import type { ButtonProps } from "../types/type";
 
 const getBgVariantStyle =(variant:ButtonProps["bgVariant"])=>{
     switch(variant){
@@ -9,7 +10,7 @@ const getBgVariantStyle =(variant:ButtonProps["bgVariant"])=>{
             case "success":
             return "bg-green-500";
             case "outline":
-            return "bg-transparent border-netural-300 border-[0.5px]";
+            return "bg-transparent border-neutral-300 border-[0.5px]";
             default:
                 return "bg-[#0286ff]";
 
@@ -28,20 +29,27 @@ const getTextVariantStyle =(variant:ButtonProps["textVariant"])=>{
             return "text-green-100";
         default:
             return "text-white";
+    }
+};
 
 const CustomButton = ({
-                          onPress,
-                          title,
-                          bgVariant="primary",
-                          textVariant="default",
-                          IconLeft,
-                          IconRight,
-                          className
-}:ButtonProps) =>(
-    <TouchableOpacity onPress={onPress} className={"w-full p-3 rounded-full flex flex-row justify-center items-center shadow-md shadow-netural-400/70 ${getBgVariantStyle(bgVariant)} ${className}"} {...props}>
-        {IconLeft && <IconLeft/>}
-        <Text className="text-lg font-bold ${getTextVariantStyle(text)}">{title}</Text>
-        {IconRight && <IconRight/>}
+    onPress,
+    title,
+    bgVariant = "primary",
+    textVariant = "default",
+    IconLeft,
+    IconRight,
+    className,
+    ...props
+}: ButtonProps) => (
+    <TouchableOpacity
+        onPress={onPress}
+        className={`w-full p-3 rounded-full flex flex-row justify-center items-center shadow-md shadow-neutral-400/70 ${getBgVariantStyle(bgVariant)} ${className ?? ""}`}
+        {...props}
+    >
+        {IconLeft && <IconLeft />}
+        <Text className={`text-lg font-bold ${getTextVariantStyle(textVariant)}`}>{title}</Text>
+        {IconRight && <IconRight />}
 
     </TouchableOpacity>
 )
