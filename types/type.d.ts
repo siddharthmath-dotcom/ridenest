@@ -53,7 +53,7 @@ declare interface Ride {
     };
 }
 
-declare interface ButtonProps extends TouchableOpacityProps {
+export interface ButtonProps extends TouchableOpacityProps {
     title: string;
     bgVariant?: "primary" | "secondary" | "danger" | "outline" | "success";
     textVariant?: "primary" | "default" | "secondary" | "danger" | "success";

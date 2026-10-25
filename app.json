@@ -7,12 +7,6 @@
     "icon": "./assets/images/icon.png",
     "scheme": "ridenest",
     "userInterfaceStyle": "automatic",
-    "splash": {
-      "image": "./assets/images/splash.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
-
-    },
     "ios": {
       "icon": "./assets/expo.icon"
     },
@@ -36,9 +30,13 @@
       [
         "expo-splash-screen",
         {
-          "backgroundColor": "#208AEF",
-          "image": "./assets/images/splash-icon.png",
-          "imageWidth": 76
+          "backgroundColor": "#ffffff",
+          "image": "./assets/images/adaptive-icon.png",
+          "imageWidth": 180,
+          "ios": {
+            "image": "./assets/images/splash.png",
+            "enableFullScreenImage_legacy": true
+          }
         }
       ]
     ],

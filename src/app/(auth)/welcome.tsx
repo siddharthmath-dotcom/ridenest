@@ -21,7 +21,7 @@ const Onboarding = () => {
                 }}
                 className="w-full flex justify-end items-end p-5"
             >
-                <Text className="text-black text-md font-JakartaBold">Skip</Text>
+                <Text className="text-black text-base font-JakartaBold">Skip</Text>
             </TouchableOpacity>
 
             <Swiper
@@ -42,7 +42,7 @@ const Onboarding = () => {
                     >
                         <Image
                             source={item.image}
-                            className="w-full h-[300px]" // ← adjust this height as needed
+                            style={{ width: "100%", height: 300 }}
                             contentFit="contain"
                         />
 
