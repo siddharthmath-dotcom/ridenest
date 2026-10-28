@@ -5,6 +5,14 @@ import { useEffect } from "react";
 import "react-native-reanimated";
 import "../global.css";
 
+// react-native-swiper calls setImmediate after scrolling, but browsers do not
+// provide it. Keep the native implementation when one exists.
+const runtimeGlobal = globalThis as typeof globalThis & {
+    setImmediate?: (callback: () => void) => ReturnType<typeof setTimeout>;
+};
+runtimeGlobal.setImmediate ??= (callback: () => void) =>
+    globalThis.setTimeout(callback, 0);
+
 SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
